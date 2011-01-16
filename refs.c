@@ -244,6 +244,7 @@ static struct ref_list *get_packed_refs(const char *submodule)
 	}
 
 	if (!refs->did_packed || submodule) {
+	  printf("Openning %s\n", packed_refs_file);
 		FILE *f = fopen(packed_refs_file, "r");
 		refs->packed = NULL;
 		if (f) {
